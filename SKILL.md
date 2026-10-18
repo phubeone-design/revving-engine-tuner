@@ -72,6 +72,10 @@ Also account for master volume and environmental modes such as tunnel, flyby, or
 
 Lead with the assumed target, chosen base, and whether the result is estimated or audibly tested. State that synthetic emulation is approximate once, briefly.
 
+Present the values the user sees on the website first, rather than raw internal scalars. For **Chamber**, show both base and suggested values in **Hz**, followed by the underlying value in parentheses. Convert with `display_hz = floor(343 / (2 * chamber) + 0.5)` (the app's positive-number rounding). Round/snap a proposed chamber input to the supported slider step before converting; do not round an untouched native preset just to compute its readout. Never give only `0.42 -> 0.45` as a chamber instruction.
+
+Example: `Chamber | 408 Hz (0.42) | 381 Hz (0.45)`. Say “adjust Chamber until the site displays 381 Hz.” Higher chamber inputs produce lower displayed Hz. If starting from a desired frequency, compute `chamber = 343 / (2 * Hz)`, snap to the supported input range/step, then recalculate the reachable displayed Hz; do not promise an unattainable frequency.
+
 Present settings in UI order, grouped by section, using a compact table:
 
 | Section | Setting | Base | Suggested | Reason |
