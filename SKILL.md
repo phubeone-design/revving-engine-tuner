@@ -17,7 +17,7 @@ Translate a requested car or engine into a reproducible sound preset for https:/
 
 ## Read the repository snapshot first
 
-Use https://github.com/phubeone-design/revving-engine-tuner as the canonical repository. Read bundled files locally when installed with its data; otherwise use authenticated GitHub access. Private repository access must be available in each harness.
+Use https://github.com/phubeone-design/revving-engine-tuner as the canonical public repository. Read bundled files locally when installed with its data; otherwise retrieve public files through GitHub or https://raw.githubusercontent.com/phubeone-design/revving-engine-tuner/main/ followed by the relative file path. Reading or cloning the public repository does not require authentication; publishing changes still requires write access. Prefer a local clone for offline use and repeatable versions.
 
 1. Read `data/manifest.json` for capture time, counts, source asset URLs, and hashes.
 2. Read `data/engines.json` to choose candidates, then only their `data/engines/<id>.json` files. Do not load all engine files into context.

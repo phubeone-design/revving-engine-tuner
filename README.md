@@ -23,13 +23,18 @@ Current snapshot: **2026-10-18**, **52 selectable engines**, **53 tune-pane cont
 
 ## Use with another harness
 
-Clone this repository using an account that can access it. Keep the folder named `revving-engine-tuner`, including SKILL.md, data/ and docs/. Point the harness's supported skill loader at that folder, or explicitly ask it to read SKILL.md. Check each harness's current documentation for its discovery location; installation paths differ and are not assumed here.
+Clone this public repository without signing in:
+
+```sh
+git clone https://github.com/phubeone-design/revving-engine-tuner.git
+```
+ Keep the folder named `revving-engine-tuner`, including SKILL.md, data/ and docs/. Point the harness's supported skill loader at that folder, or explicitly ask it to read SKILL.md. Check each harness's current documentation for its discovery location; installation paths differ and are not assumed here.
 
 Suggested prompt:
 
 > Read SKILL.md in this repository. Use its local engine index and control data to emulate a stock 2019 BMW 440i B58. Choose the closest available engine, show the settings to change first, then give the complete preset. State which values are estimates.
 
-This repository is private. Each harness needs authenticated repository access or a local clone; a URL alone does not grant access. Installing in one harness does not install it elsewhere. No credentials belong in the skill.
+This repository is public. Friends and harnesses can read or clone it without GitHub authentication. For direct file reads, use `https://raw.githubusercontent.com/phubeone-design/revving-engine-tuner/main/` plus the relative path (for example, `SKILL.md` or `data/engines.json`). Prefer a local clone for offline use. Publishing changes still requires write access. Installing in one harness does not install it elsewhere. No credentials belong in the skill.
 
 ## Refresh the reference
 
