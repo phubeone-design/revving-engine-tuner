@@ -1,0 +1,719 @@
+{
+  "controls": [
+    {
+      "id": "autoclutch",
+      "section": "Driver",
+      "label": "Auto clutch",
+      "type": "checkbox",
+      "html_initial": true,
+      "unit": "boolean"
+    },
+    {
+      "id": "tc",
+      "section": "Driver",
+      "label": "Traction control",
+      "type": "checkbox",
+      "html_initial": true,
+      "unit": "boolean"
+    },
+    {
+      "id": "cylinders",
+      "section": "Engine",
+      "label": "Cylinders",
+      "type": "number",
+      "min": 1.0,
+      "max": 16.0,
+      "step": 1.0,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "layout",
+      "section": "Engine",
+      "label": "Layout",
+      "type": "select",
+      "options": [
+        {
+          "value": "inline",
+          "label": "Inline"
+        },
+        {
+          "value": "v",
+          "label": "V"
+        },
+        {
+          "value": "flat",
+          "label": "Flat / boxer"
+        }
+      ],
+      "unit": "choice"
+    },
+    {
+      "id": "bankAngle",
+      "section": "Engine",
+      "label": "Bank angle",
+      "type": "range",
+      "min": 15.0,
+      "max": 180.0,
+      "step": 1.0,
+      "unit": "degrees"
+    },
+    {
+      "id": "crank",
+      "section": "Engine",
+      "label": "Crank",
+      "type": "select",
+      "options": [
+        {
+          "value": "even",
+          "label": "Even-fire (split pins)"
+        },
+        {
+          "value": "shared",
+          "label": "Shared crankpins"
+        },
+        {
+          "value": "cross",
+          "label": "Crossplane"
+        }
+      ],
+      "unit": "choice"
+    },
+    {
+      "id": "redline",
+      "section": "Engine",
+      "label": "Redline",
+      "type": "range",
+      "min": 1500.0,
+      "max": 16000.0,
+      "step": 100.0,
+      "unit": "rpm"
+    },
+    {
+      "id": "limiter",
+      "section": "Engine",
+      "label": "Limiter",
+      "type": "select",
+      "options": [
+        {
+          "value": "bang",
+          "label": "Bang off it"
+        },
+        {
+          "value": "hold",
+          "label": "Hold at rpm"
+        }
+      ],
+      "unit": "choice"
+    },
+    {
+      "id": "idleRpm",
+      "section": "Engine",
+      "label": "Idle rpm",
+      "type": "range",
+      "min": 500.0,
+      "max": 2000.0,
+      "step": 10.0,
+      "unit": "rpm"
+    },
+    {
+      "id": "peakTorque",
+      "section": "Engine",
+      "label": "Peak torque",
+      "type": "range",
+      "min": 20.0,
+      "max": 4000.0,
+      "step": 5.0,
+      "unit": "Nm"
+    },
+    {
+      "id": "inertia",
+      "section": "Engine",
+      "label": "Flywheel",
+      "type": "range",
+      "min": 0.01,
+      "max": 30.0,
+      "step": 0.005,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "headerLength",
+      "section": "Exhaust & intake",
+      "label": "Headers",
+      "type": "range",
+      "min": 0.2,
+      "max": 1.5,
+      "step": 0.01,
+      "unit": "m"
+    },
+    {
+      "id": "collectorLength",
+      "section": "Exhaust & intake",
+      "label": "Collector",
+      "type": "range",
+      "min": 0.2,
+      "max": 2.5,
+      "step": 0.01,
+      "unit": "m"
+    },
+    {
+      "id": "tailLength",
+      "section": "Exhaust & intake",
+      "label": "Tailpipe",
+      "type": "range",
+      "min": 0.2,
+      "max": 2.5,
+      "step": 0.01,
+      "unit": "m"
+    },
+    {
+      "id": "chamber",
+      "section": "Exhaust & intake",
+      "label": "Chamber",
+      "type": "range",
+      "min": 0.15,
+      "max": 1.0,
+      "step": 0.01,
+      "unit": "simulator scalar (no UI unit)",
+      "readout": "round(343 / (2 * input)) Hz; input is an acoustic length-like scalar"
+    },
+    {
+      "id": "muffler",
+      "section": "Exhaust & intake",
+      "label": "Muffler",
+      "type": "range",
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.01,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "valve",
+      "section": "Exhaust & intake",
+      "label": "Exhaust valve",
+      "type": "select",
+      "options": [
+        {
+          "value": "open",
+          "label": "Always open"
+        },
+        {
+          "value": "closed",
+          "label": "Always closed"
+        },
+        {
+          "value": "auto",
+          "label": "Opens on revs"
+        }
+      ],
+      "unit": "choice"
+    },
+    {
+      "id": "valveRpm",
+      "section": "Exhaust & intake",
+      "label": "Valve opens",
+      "type": "range",
+      "min": 1500.0,
+      "max": 8000.0,
+      "step": 100.0,
+      "unit": "rpm"
+    },
+    {
+      "id": "valveCold",
+      "section": "Exhaust & intake",
+      "label": "Open on start",
+      "type": "range",
+      "min": 0.0,
+      "max": 60.0,
+      "step": 1.0,
+      "unit": "s"
+    },
+    {
+      "id": "intakeLength",
+      "section": "Exhaust & intake",
+      "label": "Intake runner",
+      "type": "range",
+      "min": 0.1,
+      "max": 0.8,
+      "step": 0.01,
+      "unit": "m"
+    },
+    {
+      "id": "pops",
+      "section": "Pops & bangs",
+      "label": "Pops",
+      "type": "range",
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.01,
+      "html_initial": 0.5,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "popRate",
+      "section": "Pops & bangs",
+      "label": "Pop rate",
+      "type": "range",
+      "min": 0.1,
+      "max": 4.0,
+      "step": 0.05,
+      "html_initial": 1.0,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "popSub",
+      "section": "Pops & bangs",
+      "label": "Sub-cracks",
+      "type": "range",
+      "min": 1.0,
+      "max": 8.0,
+      "step": 1.0,
+      "html_initial": 4.0,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "popSpread",
+      "section": "Pops & bangs",
+      "label": "Spread ms",
+      "type": "range",
+      "min": 1.0,
+      "max": 40.0,
+      "step": 0.5,
+      "html_initial": 10.0,
+      "unit": "ms"
+    },
+    {
+      "id": "popCrack",
+      "section": "Pops & bangs",
+      "label": "Sharpness",
+      "type": "range",
+      "min": 0.0,
+      "max": 3.0,
+      "step": 0.01,
+      "html_initial": 1.0,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "popThump",
+      "section": "Pops & bangs",
+      "label": "Pop size",
+      "type": "range",
+      "min": 0.0,
+      "max": 3.0,
+      "step": 0.01,
+      "html_initial": 1.0,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "popBang",
+      "section": "Pops & bangs",
+      "label": "Bangs",
+      "type": "range",
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.01,
+      "html_initial": 0.0,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "popPitch",
+      "section": "Pops & bangs",
+      "label": "Pop pitch",
+      "type": "range",
+      "min": 0.4,
+      "max": 2.0,
+      "step": 0.01,
+      "html_initial": 1.0,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "popBright",
+      "section": "Pops & bangs",
+      "label": "Pop crack",
+      "type": "range",
+      "min": 0.0,
+      "max": 2.5,
+      "step": 0.01,
+      "html_initial": 1.0,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "popWhump",
+      "section": "Pops & bangs",
+      "label": "Pop whump",
+      "type": "range",
+      "min": 0.0,
+      "max": 3.0,
+      "step": 0.01,
+      "html_initial": 0.1,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "popTone",
+      "section": "Pops & bangs",
+      "label": "Pop tone",
+      "type": "range",
+      "min": -1.0,
+      "max": 1.0,
+      "step": 0.01,
+      "html_initial": 0.0,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "induction",
+      "section": "Induction",
+      "label": "Type",
+      "type": "select",
+      "options": [
+        {
+          "value": "na",
+          "label": "Naturally aspirated"
+        },
+        {
+          "value": "super",
+          "label": "Supercharger"
+        },
+        {
+          "value": "turbo",
+          "label": "Turbo"
+        }
+      ],
+      "unit": "choice"
+    },
+    {
+      "id": "boost",
+      "section": "Induction",
+      "label": "Max boost",
+      "type": "range",
+      "min": 0.0,
+      "max": 2.5,
+      "step": 0.05,
+      "html_initial": 0.8,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "whine",
+      "section": "Induction",
+      "label": "Whine",
+      "type": "range",
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.01,
+      "html_initial": 0.5,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "whinePitch",
+      "section": "Induction",
+      "label": "Whine pitch",
+      "type": "range",
+      "min": 0.4,
+      "max": 2.5,
+      "step": 0.01,
+      "html_initial": 1.0,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "lag",
+      "section": "Induction",
+      "label": "Turbo lag",
+      "type": "range",
+      "min": 0.1,
+      "max": 2.0,
+      "step": 0.05,
+      "html_initial": 0.6,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "bov",
+      "section": "Induction",
+      "label": "Blow-off",
+      "type": "select",
+      "options": [
+        {
+          "value": "vent",
+          "label": "Vent (pssh)"
+        },
+        {
+          "value": "flutter",
+          "label": "Flutter (stu-tu-tu)"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "unit": "choice"
+    },
+    {
+      "id": "flLevel",
+      "section": "Induction",
+      "label": "Blow-off level",
+      "type": "range",
+      "min": 0.0,
+      "max": 2.0,
+      "step": 0.01,
+      "html_initial": 0.5,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "flRate",
+      "section": "Induction",
+      "label": "Flutter rate",
+      "type": "range",
+      "min": 4.0,
+      "max": 120.0,
+      "step": 1.0,
+      "html_initial": 14.0,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "flPitch",
+      "section": "Induction",
+      "label": "Flutter pitch",
+      "type": "range",
+      "min": 80.0,
+      "max": 1500.0,
+      "step": 5.0,
+      "html_initial": 650.0,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "flPitchEnd",
+      "section": "Induction",
+      "label": "Pitch end",
+      "type": "range",
+      "min": 80.0,
+      "max": 900.0,
+      "step": 5.0,
+      "html_initial": 130.0,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "flDur",
+      "section": "Induction",
+      "label": "Flutter length",
+      "type": "range",
+      "min": 0.3,
+      "max": 3.0,
+      "step": 0.05,
+      "html_initial": 1.2,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "flHiss",
+      "section": "Induction",
+      "label": "Flutter hiss",
+      "type": "range",
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.01,
+      "html_initial": 0.6,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "mguk",
+      "section": "Induction",
+      "label": "MGU-K whine",
+      "type": "range",
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.01,
+      "html_initial": 0.0,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "mass",
+      "section": "Car",
+      "label": "Mass",
+      "type": "range",
+      "min": 100.0,
+      "max": 40000.0,
+      "step": 10.0,
+      "unit": "kg"
+    },
+    {
+      "id": "finalDrive",
+      "section": "Car",
+      "label": "Final drive",
+      "type": "range",
+      "min": 2.0,
+      "max": 6.0,
+      "step": 0.05,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "mic",
+      "section": "Listening",
+      "label": "Mic",
+      "type": "range",
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.01,
+      "html_initial": 0.3,
+      "unit": "simulator scalar (no UI unit)",
+      "readout": "tail if <0.33; mixed if <0.66; otherwise bay"
+    },
+    {
+      "id": "body",
+      "section": "Listening",
+      "label": "Body",
+      "type": "range",
+      "min": 0.0,
+      "max": 6.0,
+      "step": 0.01,
+      "html_initial": 2.5,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "room",
+      "section": "Listening",
+      "label": "Room",
+      "type": "range",
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.01,
+      "html_initial": 0.4,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "cabin",
+      "section": "Listening",
+      "label": "Cabin",
+      "type": "range",
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.01,
+      "html_initial": 0.5,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "wind",
+      "section": "Listening",
+      "label": "Wind + tyres",
+      "type": "range",
+      "min": 0.0,
+      "max": 3.0,
+      "step": 0.01,
+      "html_initial": 1.0,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "clip",
+      "section": "Listening",
+      "label": "Clip",
+      "type": "range",
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.01,
+      "html_initial": 0.15,
+      "unit": "simulator scalar (no UI unit)"
+    },
+    {
+      "id": "master",
+      "section": "Listening",
+      "label": "Drive",
+      "type": "range",
+      "min": 0.0,
+      "max": 2.0,
+      "step": 0.01,
+      "html_initial": 1.0,
+      "unit": "simulator scalar (no UI unit)"
+    }
+  ],
+  "global_controls": {
+    "volume": {
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 1,
+      "persistent": true
+    },
+    "tunnel": false,
+    "scene": "none"
+  },
+  "listening_initial": {
+    "mic": 0.3,
+    "body": 2.5,
+    "room": 0.4,
+    "cabin": 0.5,
+    "wind": 1,
+    "clip": 0.15,
+    "master": 1
+  },
+  "driver_initial": {
+    "autoclutch": true,
+    "tc": true
+  },
+  "sound_initial": {
+    "pops": 0.5,
+    "popRate": 1,
+    "popSub": 4,
+    "popSpread": 10,
+    "popCrack": 1,
+    "popThump": 1,
+    "popBang": 0,
+    "popPitch": 1,
+    "popBright": 1,
+    "popWhump": 0.1,
+    "popTone": 0,
+    "induction": "na",
+    "boost": 0.8,
+    "whine": 0.3,
+    "whinePitch": 1,
+    "lag": 0.6,
+    "bov": "vent",
+    "mguk": 0,
+    "gearWhine": 0,
+    "gearWhineOrder": 11,
+    "gearWhineOrderIn": 23,
+    "gearWhineIn": 0.3,
+    "idleRough": 1,
+    "camOverlap": 0,
+    "chamberGain": 0.5,
+    "bankBalance": 0,
+    "blowdownSharp": 0,
+    "flRate": 14,
+    "flPitch": 650,
+    "flPitchEnd": 130,
+    "flDur": 1.2,
+    "flHiss": 0.6,
+    "flLevel": 0.5
+  },
+  "sound_reset_on_engine_switch": {
+    "induction": "na",
+    "pops": 0.5,
+    "popRate": 1,
+    "popSub": 4,
+    "popSpread": 10,
+    "popCrack": 1,
+    "popThump": 1,
+    "popBang": 0,
+    "popPitch": 1,
+    "popBright": 1,
+    "popWhump": 0.1,
+    "popTone": 0,
+    "mguk": 0,
+    "gearWhine": 0,
+    "gearWhineOrder": 11,
+    "gearWhineOrderIn": 23,
+    "gearWhineIn": 0.3,
+    "idleRough": 1,
+    "camOverlap": 0,
+    "chamberGain": 0.5,
+    "bankBalance": 0,
+    "blowdownSharp": 0,
+    "bov": "vent"
+  },
+  "sound_fields_not_reset_on_engine_switch": [
+    "boost",
+    "flDur",
+    "flHiss",
+    "flLevel",
+    "flPitch",
+    "flPitchEnd",
+    "flRate",
+    "lag",
+    "whine",
+    "whinePitch"
+  ]
+}

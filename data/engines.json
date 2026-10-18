@@ -1,0 +1,524 @@
+{
+  "engines": [
+    {
+      "id": "alfa-romeo-156-gta-3-2-busso-v6",
+      "name": "Alfa Romeo 156 GTA (3.2 Busso V6)",
+      "file": "data/engines/alfa-romeo-156-gta-3-2-busso-v6.json",
+      "cylinders": 6,
+      "layout": "v",
+      "crank": "even",
+      "induction": "na",
+      "redline": 7000
+    },
+    {
+      "id": "audi-quattro-s1-group-b",
+      "name": "Audi Quattro S1 (Group B)",
+      "file": "data/engines/audi-quattro-s1-group-b.json",
+      "cylinders": 5,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "turbo",
+      "redline": 8000
+    },
+    {
+      "id": "audi-rs3-2-5-tfsi-i5",
+      "name": "Audi RS3 (2.5 TFSI I5)",
+      "file": "data/engines/audi-rs3-2-5-tfsi-i5.json",
+      "cylinders": 5,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "turbo",
+      "redline": 7000
+    },
+    {
+      "id": "bmw-335i-e92-n54-decat",
+      "name": "BMW 335i E92 (N54, decat)",
+      "file": "data/engines/bmw-335i-e92-n54-decat.json",
+      "cylinders": 6,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "turbo",
+      "redline": 7000
+    },
+    {
+      "id": "bmw-m3-e46-s54",
+      "name": "BMW M3 E46 (S54)",
+      "file": "data/engines/bmw-m3-e46-s54.json",
+      "cylinders": 6,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "na",
+      "redline": 8000
+    },
+    {
+      "id": "bugatti-chiron-w16-as-v16",
+      "name": "Bugatti Chiron (W16 as V16)",
+      "file": "data/engines/bugatti-chiron-w16-as-v16.json",
+      "cylinders": 16,
+      "layout": "v",
+      "crank": "even",
+      "induction": "turbo",
+      "redline": 6700
+    },
+    {
+      "id": "dodge-challenger-hellcat-6-2-supercharged",
+      "name": "Dodge Challenger Hellcat (6.2 supercharged)",
+      "file": "data/engines/dodge-challenger-hellcat-6-2-supercharged.json",
+      "cylinders": 8,
+      "layout": "v",
+      "crank": "cross",
+      "induction": "super",
+      "redline": 6200
+    },
+    {
+      "id": "ducati-1098-90-v-twin",
+      "name": "Ducati 1098 (90° V-twin)",
+      "file": "data/engines/ducati-1098-90-v-twin.json",
+      "cylinders": 2,
+      "layout": "v",
+      "crank": "shared",
+      "induction": "na",
+      "redline": 10500
+    },
+    {
+      "id": "ducati-panigale-v4-90-v4",
+      "name": "Ducati Panigale V4 (90° V4)",
+      "file": "data/engines/ducati-panigale-v4-90-v4.json",
+      "cylinders": 4,
+      "layout": "v",
+      "crank": "shared",
+      "induction": "na",
+      "redline": 14500
+    },
+    {
+      "id": "ferrari-458-italia",
+      "name": "Ferrari 458 Italia",
+      "file": "data/engines/ferrari-458-italia.json",
+      "cylinders": 8,
+      "layout": "v",
+      "crank": "even",
+      "induction": "na",
+      "redline": 9000
+    },
+    {
+      "id": "ferrari-f40-2-9-twin-turbo-v8",
+      "name": "Ferrari F40 (2.9 twin-turbo V8)",
+      "file": "data/engines/ferrari-f40-2-9-twin-turbo-v8.json",
+      "cylinders": 8,
+      "layout": "v",
+      "crank": "even",
+      "induction": "turbo",
+      "redline": 7800
+    },
+    {
+      "id": "ford-escort-mk2-rs1800-bda-dog-box",
+      "name": "Ford Escort Mk2 RS1800 (BDA, dog box)",
+      "file": "data/engines/ford-escort-mk2-rs1800-bda-dog-box.json",
+      "cylinders": 4,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "na",
+      "redline": 9000
+    },
+    {
+      "id": "ford-gt40-mk-i-302-gurney-weslake-bundle-of-snakes",
+      "name": "Ford GT40 Mk I (302 Gurney-Weslake, bundle of snakes)",
+      "file": "data/engines/ford-gt40-mk-i-302-gurney-weslake-bundle-of-snakes.json",
+      "cylinders": 8,
+      "layout": "v",
+      "crank": "cross",
+      "induction": "na",
+      "redline": 6800
+    },
+    {
+      "id": "ford-mustang-69-427-stroker-big-cam",
+      "name": "Ford Mustang '69 (427 stroker, big cam)",
+      "file": "data/engines/ford-mustang-69-427-stroker-big-cam.json",
+      "cylinders": 8,
+      "layout": "v",
+      "crank": "cross",
+      "induction": "na",
+      "redline": 6500
+    },
+    {
+      "id": "ford-mustang-gt-5-0-coyote",
+      "name": "Ford Mustang GT (5.0 Coyote)",
+      "file": "data/engines/ford-mustang-gt-5-0-coyote.json",
+      "cylinders": 8,
+      "layout": "v",
+      "crank": "cross",
+      "induction": "na",
+      "redline": 7500
+    },
+    {
+      "id": "formula-1-1995-v12-3-0-ferrari",
+      "name": "Formula 1 1995 V12 3.0 (Ferrari)",
+      "file": "data/engines/formula-1-1995-v12-3-0-ferrari.json",
+      "cylinders": 12,
+      "layout": "v",
+      "crank": "even",
+      "induction": "na",
+      "redline": 17000
+    },
+    {
+      "id": "formula-1-2005-v10-3-0",
+      "name": "Formula 1 2005 V10 3.0",
+      "file": "data/engines/formula-1-2005-v10-3-0.json",
+      "cylinders": 10,
+      "layout": "v",
+      "crank": "even",
+      "induction": "na",
+      "redline": 19000
+    },
+    {
+      "id": "formula-1-2006-13-v8-2-4",
+      "name": "Formula 1 2006-13 V8 2.4",
+      "file": "data/engines/formula-1-2006-13-v8-2-4.json",
+      "cylinders": 8,
+      "layout": "v",
+      "crank": "even",
+      "induction": "na",
+      "redline": 18000
+    },
+    {
+      "id": "formula-1-2026-v6-turbo-hybrid",
+      "name": "Formula 1 2026 V6 turbo hybrid",
+      "file": "data/engines/formula-1-2026-v6-turbo-hybrid.json",
+      "cylinders": 6,
+      "layout": "v",
+      "crank": "even",
+      "induction": "turbo",
+      "redline": 15000
+    },
+    {
+      "id": "harley-davidson-road-king-45-v-twin",
+      "name": "Harley-Davidson Road King (45° V-twin)",
+      "file": "data/engines/harley-davidson-road-king-45-v-twin.json",
+      "cylinders": 2,
+      "layout": "v",
+      "crank": "shared",
+      "induction": "na",
+      "redline": 5500
+    },
+    {
+      "id": "honda-civic-type-r-ek9-b16b",
+      "name": "Honda Civic Type R EK9 (B16B)",
+      "file": "data/engines/honda-civic-type-r-ek9-b16b.json",
+      "cylinders": 4,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "na",
+      "redline": 8400
+    },
+    {
+      "id": "honda-s2000-f20c",
+      "name": "Honda S2000 (F20C)",
+      "file": "data/engines/honda-s2000-f20c.json",
+      "cylinders": 4,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "na",
+      "redline": 9000
+    },
+    {
+      "id": "jaguar-f-type-v6-s-supercharged",
+      "name": "Jaguar F-Type V6 S (supercharged)",
+      "file": "data/engines/jaguar-f-type-v6-s-supercharged.json",
+      "cylinders": 6,
+      "layout": "v",
+      "crank": "even",
+      "induction": "super",
+      "redline": 6500
+    },
+    {
+      "id": "kawasaki-ninja-h2-supercharged-i4",
+      "name": "Kawasaki Ninja H2 (supercharged I4)",
+      "file": "data/engines/kawasaki-ninja-h2-supercharged-i4.json",
+      "cylinders": 4,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "super",
+      "redline": 14000
+    },
+    {
+      "id": "ktm-1290-super-duke-r-75-v-twin",
+      "name": "KTM 1290 Super Duke R (75° V-twin)",
+      "file": "data/engines/ktm-1290-super-duke-r-75-v-twin.json",
+      "cylinders": 2,
+      "layout": "v",
+      "crank": "shared",
+      "induction": "na",
+      "redline": 10000
+    },
+    {
+      "id": "ktm-450-sx-f-single",
+      "name": "KTM 450 SX-F (single)",
+      "file": "data/engines/ktm-450-sx-f-single.json",
+      "cylinders": 1,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "na",
+      "redline": 9500
+    },
+    {
+      "id": "lamborghini-aventador-v12",
+      "name": "Lamborghini Aventador (V12)",
+      "file": "data/engines/lamborghini-aventador-v12.json",
+      "cylinders": 12,
+      "layout": "v",
+      "crank": "even",
+      "induction": "na",
+      "redline": 8500
+    },
+    {
+      "id": "lancia-delta-integrale-group-a-2-0-turbo-anti-lag",
+      "name": "Lancia Delta Integrale Group A (2.0 turbo, anti-lag)",
+      "file": "data/engines/lancia-delta-integrale-group-a-2-0-turbo-anti-lag.json",
+      "cylinders": 4,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "turbo",
+      "redline": 7200
+    },
+    {
+      "id": "lexus-lfa-4-8-v10",
+      "name": "Lexus LFA (4.8 V10)",
+      "file": "data/engines/lexus-lfa-4-8-v10.json",
+      "cylinders": 10,
+      "layout": "v",
+      "crank": "even",
+      "induction": "na",
+      "redline": 9000
+    },
+    {
+      "id": "mazda-mx-5-na-1-6",
+      "name": "Mazda MX-5 NA (1.6)",
+      "file": "data/engines/mazda-mx-5-na-1-6.json",
+      "cylinders": 4,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "na",
+      "redline": 7000
+    },
+    {
+      "id": "mazda-rx-7-fd-13b-bridge-port-na-open-pipe",
+      "name": "Mazda RX-7 FD (13B bridge port, NA, open pipe)",
+      "file": "data/engines/mazda-rx-7-fd-13b-bridge-port-na-open-pipe.json",
+      "cylinders": 2,
+      "layout": "rotary",
+      "crank": "even",
+      "induction": "na",
+      "redline": 9500
+    },
+    {
+      "id": "mazda-rx-7-fd-13b-rew-twin-rotor-sequential-turbos",
+      "name": "Mazda RX-7 FD (13B-REW twin-rotor, sequential turbos)",
+      "file": "data/engines/mazda-rx-7-fd-13b-rew-twin-rotor-sequential-turbos.json",
+      "cylinders": 2,
+      "layout": "rotary",
+      "crank": "even",
+      "induction": "turbo",
+      "redline": 8000
+    },
+    {
+      "id": "mclaren-f1-bmw-s70-2-6-1-v12",
+      "name": "McLaren F1 (BMW S70/2 6.1 V12)",
+      "file": "data/engines/mclaren-f1-bmw-s70-2-6-1-v12.json",
+      "cylinders": 12,
+      "layout": "v",
+      "crank": "even",
+      "induction": "na",
+      "redline": 7500
+    },
+    {
+      "id": "mini-cooper-s-r53-supercharged",
+      "name": "Mini Cooper S R53 (supercharged)",
+      "file": "data/engines/mini-cooper-s-r53-supercharged.json",
+      "cylinders": 4,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "super",
+      "redline": 6750
+    },
+    {
+      "id": "nascar-cup-v8-358-ci-pushrod-x-pipe",
+      "name": "NASCAR Cup V8 (358 ci pushrod, X-pipe)",
+      "file": "data/engines/nascar-cup-v8-358-ci-pushrod-x-pipe.json",
+      "cylinders": 8,
+      "layout": "v",
+      "crank": "cross",
+      "induction": "na",
+      "redline": 9000
+    },
+    {
+      "id": "nissan-gt-r-r35",
+      "name": "Nissan GT-R R35",
+      "file": "data/engines/nissan-gt-r-r35.json",
+      "cylinders": 6,
+      "layout": "v",
+      "crank": "even",
+      "induction": "turbo",
+      "redline": 7000
+    },
+    {
+      "id": "nissan-skyline-gt-r-r34-rb26dett",
+      "name": "Nissan Skyline GT-R R34 (RB26DETT)",
+      "file": "data/engines/nissan-skyline-gt-r-r34-rb26dett.json",
+      "cylinders": 6,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "turbo",
+      "redline": 8000
+    },
+    {
+      "id": "porsche-911-carrera-993-air-cooled-flat-6",
+      "name": "Porsche 911 Carrera (993, air-cooled flat-6)",
+      "file": "data/engines/porsche-911-carrera-993-air-cooled-flat-6.json",
+      "cylinders": 6,
+      "layout": "flat",
+      "crank": "even",
+      "induction": "na",
+      "redline": 6800
+    },
+    {
+      "id": "porsche-911-gt3-992",
+      "name": "Porsche 911 GT3 (992)",
+      "file": "data/engines/porsche-911-gt3-992.json",
+      "cylinders": 6,
+      "layout": "flat",
+      "crank": "even",
+      "induction": "na",
+      "redline": 9000
+    },
+    {
+      "id": "porsche-911-gt3-cup-992",
+      "name": "Porsche 911 GT3 Cup (992)",
+      "file": "data/engines/porsche-911-gt3-cup-992.json",
+      "cylinders": 6,
+      "layout": "flat",
+      "crank": "even",
+      "induction": "na",
+      "redline": 8750
+    },
+    {
+      "id": "porsche-mission-s-flat-8-concept",
+      "name": "Porsche Mission S (flat-8 concept)",
+      "file": "data/engines/porsche-mission-s-flat-8-concept.json",
+      "cylinders": 8,
+      "layout": "flat",
+      "crank": "even",
+      "induction": "turbo",
+      "redline": 8000
+    },
+    {
+      "id": "rolls-royce-merlin-v12-spitfire",
+      "name": "Rolls-Royce Merlin V12 (Spitfire)",
+      "file": "data/engines/rolls-royce-merlin-v12-spitfire.json",
+      "cylinders": 12,
+      "layout": "v",
+      "crank": "even",
+      "induction": "super",
+      "redline": 3000
+    },
+    {
+      "id": "shelby-cobra-427-s-c-fe-side-oiler-side-pipes",
+      "name": "Shelby Cobra 427 S/C (FE side-oiler, side pipes)",
+      "file": "data/engines/shelby-cobra-427-s-c-fe-side-oiler-side-pipes.json",
+      "cylinders": 8,
+      "layout": "v",
+      "crank": "cross",
+      "induction": "na",
+      "redline": 6500
+    },
+    {
+      "id": "subaru-impreza-wrc-2001-ej20-dog-box",
+      "name": "Subaru Impreza WRC 2001 (EJ20, dog box)",
+      "file": "data/engines/subaru-impreza-wrc-2001-ej20-dog-box.json",
+      "cylinders": 4,
+      "layout": "flat",
+      "crank": "even",
+      "induction": "turbo",
+      "redline": 7500
+    },
+    {
+      "id": "subaru-wrx-sti-ej257",
+      "name": "Subaru WRX STI (EJ257)",
+      "file": "data/engines/subaru-wrx-sti-ej257.json",
+      "cylinders": 4,
+      "layout": "flat",
+      "crank": "shared",
+      "induction": "turbo",
+      "redline": 6700
+    },
+    {
+      "id": "toyota-ae86-trueno-4a-ge-on-itbs-272-cams",
+      "name": "Toyota AE86 Trueno (4A-GE on ITBs, 272° cams)",
+      "file": "data/engines/toyota-ae86-trueno-4a-ge-on-itbs-272-cams.json",
+      "cylinders": 4,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "na",
+      "redline": 8000
+    },
+    {
+      "id": "toyota-supra-mkiv-2jz-gte",
+      "name": "Toyota Supra MkIV (2JZ-GTE)",
+      "file": "data/engines/toyota-supra-mkiv-2jz-gte.json",
+      "cylinders": 6,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "turbo",
+      "redline": 6800
+    },
+    {
+      "id": "triumph-rocket-3-2-5-l-triple",
+      "name": "Triumph Rocket 3 (2.5 L triple)",
+      "file": "data/engines/triumph-rocket-3-2-5-l-triple.json",
+      "cylinders": 3,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "na",
+      "redline": 7000
+    },
+    {
+      "id": "volkswagen-beetle-1600-air-cooled",
+      "name": "Volkswagen Beetle 1600 (air-cooled)",
+      "file": "data/engines/volkswagen-beetle-1600-air-cooled.json",
+      "cylinders": 4,
+      "layout": "flat",
+      "crank": "even",
+      "induction": "na",
+      "redline": 4200
+    },
+    {
+      "id": "volkswagen-golf-gti-mk5-decat-pop-bang-map",
+      "name": "Volkswagen Golf GTI Mk5 (decat, pop & bang map)",
+      "file": "data/engines/volkswagen-golf-gti-mk5-decat-pop-bang-map.json",
+      "cylinders": 4,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "turbo",
+      "redline": 7000
+    },
+    {
+      "id": "yamaha-mt-09-cp3-triple",
+      "name": "Yamaha MT-09 (CP3 triple)",
+      "file": "data/engines/yamaha-mt-09-cp3-triple.json",
+      "cylinders": 3,
+      "layout": "inline",
+      "crank": "even",
+      "induction": "na",
+      "redline": 11000
+    },
+    {
+      "id": "yamaha-yzf-r1-crossplane-i4",
+      "name": "Yamaha YZF-R1 (crossplane I4)",
+      "file": "data/engines/yamaha-yzf-r1-crossplane-i4.json",
+      "cylinders": 4,
+      "layout": "inline",
+      "crank": "cross",
+      "induction": "na",
+      "redline": 13500
+    }
+  ]
+}
