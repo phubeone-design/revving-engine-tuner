@@ -91,11 +91,12 @@ Finish with two or three targeted adjustments for likely feedback such as too ra
 - If sound can actually be heard through the available tools, compare warm idle, steady 2,000/3,000 rpm, an acceleration sweep, lift-off, and a shift. Match volume and listening perspective. Never claim audio validation from a screenshot, waveform, or page state alone.
 - If audio cannot be monitored, say “estimated starting preset” and ask the user to report the most obvious mismatch after trying it. Do not delay the first recommendation solely for a recording.
 - When applying settings is requested, read back the applied controls and report any clamped values or unsupported settings. Preserve unrelated user settings and do not start recording/uploading without a request.
+- To apply without operating sliders, follow `bridge/SKILL.md`. It ships a userscript panel, a `#tune=` link builder (`node bridge/make-link.mjs preset.json`) and a `window.RevvingBridge` API for harnesses with browser access. Always select the base preset before sending deltas, and report slider snapping rather than silently accepting it.
 - For follow-ups, retain the last target, base, proposed/applied values, and user feedback. Show a concise delta unless a full preset is requested. Do not claim a tuning is tested or preferred until feedback supports it.
 
 ## Portable execution
 
-Keep this SKILL.md as the canonical instruction file inside a folder named revving-engine-tuner. Install the entire repository folder, including `data/` and `docs/`, so recommendations work without browser access. Use relative paths. Do not require ChatGPT-specific tool names or personal filesystem paths.
+Keep this SKILL.md as the canonical instruction file inside a folder named revving-engine-tuner. Install the entire repository folder, including `data/`, `docs/` and `bridge/`, so recommendations work without browser access and applying works without retyping. Use relative paths. Do not require ChatGPT-specific tool names or personal filesystem paths.
 
 In Claude, Hermes, OpenCode, or another harness, use its supported skill loader and available browsing tools. If it cannot discover this folder, load this file explicitly as task instructions. Check the harness's current official documentation before giving installation paths or asserting automatic discovery. Installation in one harness does not install it in the others.
 
