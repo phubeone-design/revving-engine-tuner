@@ -1,8 +1,10 @@
 // ==UserScript==
 // @name         revving bridge — preset overlay
 // @namespace    https://github.com/phubeone-design/revving-engine-tuner
-// @version      1.0.0
+// @version      1.1.0
 // @description  Apply JSON presets to keir.is/revving without dragging sliders. Auto-applies #tune= links produced by a harness.
+// @updateURL    https://raw.githubusercontent.com/phubeone-design/revving-engine-tuner/main/bridge/revving-bridge.user.js
+// @downloadURL  https://raw.githubusercontent.com/phubeone-design/revving-engine-tuner/main/bridge/revving-bridge.user.js
 // @match        https://keir.is/revving
 // @match        https://keir.is/revving/*
 // @run-at       document-idle
@@ -522,7 +524,7 @@
     lastHash = key;
     const report = applyPreset(preset, { updateHash: true });
     lastHash = JSON.stringify(preset);
-    if (panel) panel.report(report, 'from link');
+    if (panel) panel.report(report, 'from link', preset);
     return report;
   }
 
@@ -562,6 +564,7 @@
           line-height:1.5; outline:none; tab-size:2;
         }
         textarea:focus { border-color:#555; }
+        textarea::placeholder { color:#4b4b4b; font-style:italic; }
         .row { display:flex; gap:6px; margin-top:8px; flex-wrap:wrap; }
         button {
           background:#1a1a1a; color:#ddd; border:1px solid #343434; border-radius:3px;
@@ -592,7 +595,7 @@
           <button data-a="close">Close</button>
         </div>
         <pre data-out hidden></pre>
-        <div class="hint">Accepts control ids or UI labels. <code>base</code> picks the engine preset first, then values are applied.</div>
+        <div class="hint">The shaded text above is an <b>example</b>, not content — click <b>Read current</b> to load the live tune, or paste a preset. A <code>#tune=</code> link works here too.</div>
       </div>
       <button class="tab" data-a="toggle">tune json</button>
     `;
@@ -648,6 +651,45 @@
     const escapeHtml = (s) =>
       String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
+    // Accept a preset object, a bare JSON string, or a pasted #tune= link.
+    function applyFromBox() {
+      const raw = ta.value.trim();
+
+      if (!raw) {
+        print(
+          '<span class="warn">nothing to apply — the shaded text in the box is just an example, not content.</span>\n' +
+            'Click <b>Read current</b> to load the live settings, or paste a preset.'
+        );
+        return;
+      }
+
+      let preset;
+      try {
+        const link = /[#&]tune=([A-Za-z0-9_\-%=]+)/.exec(raw);
+        if (link) {
+          preset = JSON.parse(b64urlDecode(decodeURIComponent(link[1])));
+        } else if (!raw.startsWith('{') && /^[A-Za-z0-9_-]{20,}$/.test(raw)) {
+          preset = JSON.parse(b64urlDecode(raw)); // bare payload without the URL
+        } else {
+          preset = JSON.parse(raw);
+        }
+      } catch (err) {
+        const hint = raw.startsWith('{')
+          ? 'Check for a missing brace, a trailing comma, or a truncated paste.'
+          : 'Expected a JSON object, or a keir.is/revving link containing #tune=.';
+        print(`<span class="err">could not read that: ${escapeHtml(err.message)}</span>\n${hint}`);
+        return;
+      }
+
+      try {
+        const report = applyPreset(preset);
+        ta.value = JSON.stringify(preset, null, 2);
+        print(describe(report));
+      } catch (err) {
+        print(`<span class="err">${escapeHtml(err.message)}</span>`);
+      }
+    }
+
     root.addEventListener('click', (ev) => {
       const action = ev.target.closest('[data-a]')?.dataset.a;
       if (!action) return;
@@ -658,12 +700,7 @@
       if (action === 'close') return show(false);
 
       if (action === 'apply') {
-        try {
-          const report = applyJSON(ta.value);
-          print(describe(report));
-        } catch (err) {
-          print(`<span class="err">${escapeHtml(err.message)}</span>`);
-        }
+        applyFromBox();
         return;
       }
 
@@ -700,8 +737,9 @@
 
     return {
       show,
-      report: (r, source) => {
+      report: (r, source, preset) => {
         show(true);
+        if (preset) ta.value = JSON.stringify(preset, null, 2);
         print(describe(r, source));
       },
     };

@@ -30,7 +30,9 @@ The script matches both `/revving` and the mobile `/revving/m`.
 ## Use it
 
 **Panel** — click `TUNE JSON`, paste a preset, press **Apply** (or `Ctrl+Enter`).
-`Read current` dumps the live state into the box, `Copy link` turns it into a shareable URL.
+A pasted `#tune=` link is decoded automatically. `Read current` dumps the live state
+into the box, `Copy link` turns it into a shareable URL. The shaded text in an empty box
+is an example, not content — Apply says so instead of failing.
 
 **Link** — from this folder:
 
